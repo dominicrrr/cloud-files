@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MY WEBSITE</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+  </head>
+  <body>
+    <div class="saved-noti" id="saved-noti"><p>Saved Successfully!</p></div>
+    <ul class="nav-list">
+      <li id="ham-container" class="bar-buttons">
+        <input type="checkbox" id="openSidebarMenu" class="openSidebarMenu" />
+        <label for="openSidebarMenu" class="openSidebarMenu">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </label>
+        <div id="sidebarMenu">
+          <div class="innerMenu">
+            <div class="pin-button-container">
+              <ul class="pin-list">
+                <li class="pin-list-item">
+                  <input
+                    type="checkbox"
+                    class="pin-button"
+                    id="red-pin-button"
+                    value="1"
+                    onclick="onlyOne(this)"
+                    data-color="red"
+                  />
+                  <span class="pin-tooltip" id="red-button-dropdown">
+                    poo butt
+                  </span>
+                  <label for="red-pin-button"
+                    ><span class="pin">
+                      <img
+                        src="images/pins/map-pin-icon.png"
+                        width="30"
+                        height="40"
+                        value="1"
+                        class="pin"
+                    /></span>
+                  </label>
+                </li>
+                <li class="pin-list-item">
+                  <input
+                    type="checkbox"
+                    class="pin-button"
+                    id="blue-pin-button"
+                    value="1"
+                    data-color="blue"
+                    onclick="onlyOne(this)"
+                  />
+                  <span class="pin-tooltip" id="blue-button-dropdown">
+                    butt poo
+                  </span>
+                  <label for="blue-pin-button"
+                    ><span class="pin">
+                      <img
+                        src="images/pins/pin-blue.png"
+                        width="30"
+                        height="40"
+                        class="pin"
+                    /></span>
+                  </label>
+                </li>
+                <li class="pin-list-item">
+                  <input
+                    type="checkbox"
+                    class="pin-button"
+                    id="green-pin-button"
+                    value="1"
+                    data-color="green"
+                    onclick="onlyOne(this)"
+                  />
+                  <span class="pin-tooltip" id="green-button-dropdown">
+                    poo poo pie
+                  </span>
+                  <label for="green-pin-button"
+                    ><span class="pin">
+                      <img
+                        src="images/pins/pin-green.png"
+                        width="30"
+                        height="40"
+                    /></span>
+                  </label>
+                </li>
+                <li class="pin-list-item">
+                  <input
+                    type="checkbox"
+                    class="pin-button"
+                    id="purple-pin-button"
+                    value="1"
+                    data-color="purple"
+                    onclick="onlyOne(this)"
+                  />
+                  <span class="pin-tooltip" id="purple-button-dropdown">
+                    poop butt
+                  </span>
+                  <label for="purple-pin-button">
+                    <span class="pin"
+                      ><img
+                        src="images/pins/pin-purple.png"
+                        width="30"
+                        height="40"
+                    /></span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+            <div class="pin-details">
+              <div class="pin-image-container">
+                <img
+                  src="images/pins/map-pin-icon.png"
+                  width="125"
+                  height="175"
+                  id="pin-display"
+                />
+              </div>
+              <div class="add-info">
+                <form class="input buffer">
+                  <label class="input-buffer" for="type-of-incident"
+                    >Type of Incident</label
+                  >
+                  <input id="type-of-incident" type="text" value="Fighting" />
+                </form>
+                <form class="input-buffer">
+                  <p>
+                    Student Id:
+                    <span
+                      class="textarea"
+                      role="textbox"
+                      id="studentId"
+                      contenteditable
+                    ></span>
+                  </p>
+                </form>
+                <form class="input-buffer">
+                  <p>
+                    Floor Level:
+                    <span
+                      class="textarea"
+                      role="textbox"
+                      id="floor-level"
+                      contenteditable
+                    ></span>
+                  </p>
+                </form>
+                <form class="input-buffer">
+                  <p>
+                    Additional Details:
+                    <span
+                      class="textarea"
+                      role="textbox"
+                      id="incident-details"
+                      contenteditable
+                    ></span>
+                  </p>
+                </form>
+                <button id="save-button" onclick="saveDetails()">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="bar-buttons">
+        <button id="drop-pin" onclick="pin_drop()">Drop a pin</button>
+      </li>
+    </ul>
+    <div class="image-container">
+      <div id="map"></div>
+      <div id="marker-position"></div>
+    </div>
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
